@@ -1,21 +1,44 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { saveReadIntoLocalStorages, checkIfRead, addToWishStorage } from "../../utility/localStorage";
 const ViewBook = () => {
     const booksDetail=useLoaderData();
     const {bookId}=useParams();
     console.log(booksDetail,bookId);
     const book=booksDetail.find(book=>book.bookId==parseInt(bookId));
     console.log(book);
+
     const handleRead=(bookId)=>{
-        
+       const result= saveReadIntoLocalStorages(bookId);
+        if(result==false){
+            toast('You have already read it.');
+        }
+        else{
+            toast("Book added to read list.");
+        }
+    }
+
+    const handleWishList=(bookId)=>{
+        const checkRead = checkIfRead(bookId);
+        if(checkRead)
+             toast("You have already read this book.");
+        else{
+            const result =addToWishStorage(bookId);
+            if(result==false){
+                toast('You have already added it to wishlist.');
+            }
+            else{
+                toast("Book added to wish list.");
+            }
+        }
     }
 
 
     return (
-        <div className="card flex-grow lg:card-side bg-base-100  m-8 p-8">
-        <figure className="w-full"><img src={book.image} alt="book"/></figure>
-        <div className="card-body">
+        <div className="card flex-grow lg:card-side bg-base-100  p-8">
+        <figure className="w-full"><img src={book.image} alt="book" width="" height="200px" /></figure>
+        <div className="card-body md:mt-20 md:mb-12">
           <h2 className="text-4xl font-bold  text-[#131313] mb-3">{book.bookName}</h2>
           <p className="text-[#131313CC] text-lg">By:  {book.author}</p>
           <hr></hr>
