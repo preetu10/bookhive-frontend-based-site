@@ -12,6 +12,6 @@ Book Hive is an online platform dedicated to book enthusiasts, providing a hub f
 - **Analyzing Reading Capability**:  Through our Pages to Read section, a reader can  easily analyze his capability of reading by seeing the bar chart including total page number of his read books.
 
 ## Live Site Link
-
+- <https://lovely-youtiao-447e99.netlify.app/>
 
 
