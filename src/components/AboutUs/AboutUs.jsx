@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="text-center  my-12 min-h-screen">
+    <div className="text-center rounded-lg my-12 min-h-screen bg-red-100 p-8">
       <p className="font-bold  text-4xl my-4">Welcome to Book Hive!</p>
       <p className="mx-auto text-center  text-lg">
         We are passionate about providing facilities according to our users

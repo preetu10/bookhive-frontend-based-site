@@ -51,6 +51,18 @@ const Header = () => {
         }}
         >About Us</NavLink>
       </li>
+      <li className="px-2 text-[#131313CC]">
+        <NavLink to="/contact"
+         style={({isActive})=>{
+            return{
+                color:isActive?"#23BE0A":"#131313CC",
+                border:isActive?"2px solid #23BE0A ":"none",
+                backgroundColor:isActive&&"white",
+                fontWeight:isActive&&"bold",
+            };
+        }}
+        >Contact Us</NavLink>
+      </li>
     </>
   );
 
