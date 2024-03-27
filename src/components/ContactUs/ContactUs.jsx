@@ -7,7 +7,7 @@ const ContactUs = () => {
         Stay connected with our book-loving community. Find our contact details
         below for easy communication.
       </p>
-      <section className="flex flex-row gap-8 mx-auto items-center justify-center py-8">
+      <section className="flex  flex-col md:flex-row gap-8 mx-auto items-center justify-center py-8">
         <div>
           <h5 className="font-bold  text-2xl my-4">Our Location</h5>
           <p className="mx-auto text-center  text-lg">
