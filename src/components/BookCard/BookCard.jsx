@@ -5,7 +5,6 @@ const BookCard = ({ book }) => {
 
   const navigate=useNavigate();
     const handleViewBook = (bookId) => {
-       //  <Link to={`/viewBook/${bookId}`}></Link>
          navigate(`/viewBook/${bookId}`);
     }
 
